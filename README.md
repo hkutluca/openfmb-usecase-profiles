@@ -11,7 +11,7 @@ This repo contains the following:
 
 NOTE:  Currently the Phase 1 release of the Usecases and associated documents are located in this repo except for the XSD.  The XSD can be accessed through purchasing the NAESB Standards.  Refer to [OpenFMB.io](https://openfmb.github.io) about getting the standard.
 
-Release packages
+## Release packages
 
 A release package will be created for each major, minor and patch udpate to the Usecases 
 
@@ -22,3 +22,4 @@ Release package will contain the following
 * UML compressed file
 * XSD files 
 * IDL files
+
