@@ -1,5 +1,3 @@
-UNDER CONSTRUCTION
-
 #  Description
 
 This repo contains the following:
@@ -22,4 +20,6 @@ Release package will contain the following
 * UML compressed file
 * XSD files 
 * IDL files
+
+The Phase 1 package (Dec 15, 2015) is located [here](https://github.com/openfmb/openfmb-usecase-profiles/releases).
 
