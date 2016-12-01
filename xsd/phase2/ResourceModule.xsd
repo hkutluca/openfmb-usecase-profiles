@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://openfmb.org/2016/10/openfmb/resourcemodule" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://openfmb.org/2016/10/openfmb/resourcemodule" xmlns:res="http://openfmb.org/2016/10/openfmb/resourcemodule" xmlns:c="http://openfmb.org/2016/10/openfmb/commonmodule" elementFormDefault="qualified" version="1.0">
+	<xs:import namespace="http://openfmb.org/2016/10/openfmb/commonmodule" schemaLocation="CommonModule.xsd"/>
+	<xs:element name="ResourceReadingProfile" type="ResourceReadingProfile"/>
+	<xs:complexType name="ResourceReadingProfile">
+		<xs:annotation>
+			<xs:documentation>Set of values obtained from the meter.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="meter" type="c:Meter" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="resourceReadingList" type="c:ResourceReadingList" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ResourceStatusProfile" type="ResourceStatusProfile"/>
+	<xs:complexType name="ResourceStatusProfile">
+		<xs:annotation>
+			<xs:documentation>Resource status module</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="powerSystemResource" type="c:PowerSystemResource" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="resourceStatus" type="c:ResourceStatus" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

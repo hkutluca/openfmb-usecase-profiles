@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://openfmb.org/2016/10/openfmb/solarmodule" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://openfmb.org/2016/10/openfmb/solarmodule" xmlns:solr="http://openfmb.org/2016/10/openfmb/solarmodule" xmlns:c="http://openfmb.org/2016/10/openfmb/commonmodule" elementFormDefault="qualified" version="1.0">
+	<xs:import namespace="http://openfmb.org/2016/10/openfmb/commonmodule" schemaLocation="CommonModule.xsd"/>
+	<xs:element name="SolarControlProfile" type="SolarControlProfile"/>
+	<xs:complexType name="SolarControlProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="solarControl" type="c:SolarControl" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="solarInverter" type="c:SolarInverter" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="SolarReadingProfile" type="SolarReadingProfile"/>
+	<xs:complexType name="SolarReadingProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="solarInverter" type="c:SolarInverter" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="solarReadingList" type="c:SolarReadingList" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="SolarEventProfile" type="SolarEventProfile"/>
+	<xs:complexType name="SolarEventProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="solarInverter" type="c:SolarInverter" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="solarInverterEvent" type="c:SolarInverterEvent" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="SolarCapabilityProfile" type="SolarCapabilityProfile"/>
+	<xs:complexType name="SolarCapabilityProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="solarCapability" type="c:SolarCapability" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="solarInverter" type="c:SolarInverter" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="SolarForecastProfile" type="SolarForecastProfile"/>
+	<xs:complexType name="SolarForecastProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="forecastSchedule" type="c:ForecastSchedule" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="solarInverter" type="c:SolarInverter" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="SolarControlScheduleProfile" type="SolarControlScheduleProfile"/>
+	<xs:complexType name="SolarControlScheduleProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="solarControlScheduleList" type="c:SolarControlScheduleList" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="solarInverter" type="c:SolarInverter" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="SolarStatusProfile" type="SolarStatusProfile"/>
+	<xs:complexType name="SolarStatusProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="solarInverter" type="c:SolarInverter" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="solarStatus" type="c:SolarStatus" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

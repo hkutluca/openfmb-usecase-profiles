@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://openfmb.org/2016/10/openfmb/generationmodule" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://openfmb.org/2016/10/openfmb/generationmodule" xmlns:gen="http://openfmb.org/2016/10/openfmb/generationmodule" xmlns:c="http://openfmb.org/2016/10/openfmb/commonmodule" elementFormDefault="qualified" version="1.0">
+	<xs:import namespace="http://openfmb.org/2016/10/openfmb/commonmodule" schemaLocation="CommonModule.xsd"/>
+	<xs:element name="GenerationForecastProfile" type="GenerationForecastProfile"/>
+	<xs:complexType name="GenerationForecastProfile">
+		<xs:annotation>
+			<xs:documentation>Load forecast.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="forecastSchedule" type="c:ForecastSchedule" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="generatingUnit" type="c:GeneratingUnit" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="GenerationReadingProfile" type="GenerationReadingProfile"/>
+	<xs:complexType name="GenerationReadingProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="generatingUnit" type="c:GeneratingUnit" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="generationReadingList" type="c:GenerationReadingList" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="GenerationEventProfile" type="GenerationEventProfile"/>
+	<xs:complexType name="GenerationEventProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="generatingUnit" type="c:GeneratingUnit" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="generationEvent" type="c:GenerationEvent" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="GenerationControlProfile" type="GenerationControlProfile"/>
+	<xs:complexType name="GenerationControlProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="generatingUnit" type="c:GeneratingUnit" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="generationControl" type="c:GenerationControl" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="GenerationControlScheduleProfile" type="GenerationControlScheduleProfile"/>
+	<xs:complexType name="GenerationControlScheduleProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="generatingUnit" type="c:GeneratingUnit" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="generationControlScheduleList" type="c:GenerationControlScheduleList" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="GenerationStatusProfile" type="GenerationStatusProfile"/>
+	<xs:complexType name="GenerationStatusProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="generatingUnit" type="c:GeneratingUnit" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="generationStatus" type="c:GenerationStatus" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

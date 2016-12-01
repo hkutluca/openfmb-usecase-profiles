@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://openfmb.org/2016/10/openfmb/securitymodule" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://openfmb.org/2016/10/openfmb/securitymodule" xmlns:scrt="http://openfmb.org/2016/10/openfmb/securitymodule" xmlns:c="http://openfmb.org/2016/10/openfmb/commonmodule" elementFormDefault="qualified" version="1.0">
+	<xs:import namespace="http://openfmb.org/2016/10/openfmb/commonmodule" schemaLocation="CommonModule.xsd"/>
+	<xs:element name="SecurityEventProfile" type="SecurityEventProfile"/>
+	<xs:complexType name="SecurityEventProfile">
+		<xs:annotation>
+			<xs:documentation>Load forecast.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="securityEvent" type="c:SecurityEvent" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

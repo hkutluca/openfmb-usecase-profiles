@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://openfmb.org/2016/10/openfmb/regulatormodule" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://openfmb.org/2016/10/openfmb/regulatormodule" xmlns:reg="http://openfmb.org/2016/10/openfmb/regulatormodule" xmlns:c="http://openfmb.org/2016/10/openfmb/commonmodule" elementFormDefault="qualified" version="1.0">
+	<xs:import namespace="http://openfmb.org/2016/10/openfmb/commonmodule" schemaLocation="CommonModule.xsd"/>
+	<xs:element name="RegulatorStatusProfile" type="RegulatorStatusProfile"/>
+	<xs:complexType name="RegulatorStatusProfile">
+		<xs:annotation>
+			<xs:documentation>Resource status module</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="regulatorStatus" type="c:RegulatorStatus" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="regulatorSystem" type="c:RegulatorSystem" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="RegulatorReadingProfile" type="RegulatorReadingProfile"/>
+	<xs:complexType name="RegulatorReadingProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="regulatorReadingList" type="c:RegulatorReadingList" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="regulatorSystem" type="c:RegulatorSystem" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="RegulatorControlScheduleProfile" type="RegulatorControlScheduleProfile"/>
+	<xs:complexType name="RegulatorControlScheduleProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="regulatorControlScheduleList" type="c:RegulatorControlScheduleList" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="regulatorSystem" type="c:RegulatorSystem" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="RegulatorEventProfile" type="RegulatorEventProfile"/>
+	<xs:complexType name="RegulatorEventProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="regulatorEvent" type="c:RegulatorEvent" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="regulatorSystem" type="c:RegulatorSystem" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

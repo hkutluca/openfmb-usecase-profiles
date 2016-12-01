@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://openfmb.org/2016/10/openfmb/breakermodule" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://openfmb.org/2016/10/openfmb/breakermodule" xmlns:brk="http://openfmb.org/2016/10/openfmb/breakermodule" xmlns:c="http://openfmb.org/2016/10/openfmb/commonmodule" elementFormDefault="qualified" version="1.0">
+	<xs:import namespace="http://openfmb.org/2016/10/openfmb/commonmodule" schemaLocation="CommonModule.xsd"/>
+	<xs:element name="BreakerEventProfile" type="BreakerEventProfile"/>
+	<xs:complexType name="BreakerEventProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="breaker" type="c:Breaker" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="breakerEvent" type="c:BreakerEvent" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="BreakerReadingProfile" type="BreakerReadingProfile"/>
+	<xs:complexType name="BreakerReadingProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="breaker" type="c:Breaker" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="breakerReadingList" type="c:BreakerReadingList" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="BreakerStatusProfile" type="BreakerStatusProfile"/>
+	<xs:complexType name="BreakerStatusProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="breaker" type="c:Breaker" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="breakerStatus" type="c:BreakerStatus" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

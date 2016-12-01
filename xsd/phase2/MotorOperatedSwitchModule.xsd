@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://openfmb.org/2016/10/openfmb/motoroperatedswitchmodule" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://openfmb.org/2016/10/openfmb/motoroperatedswitchmodule" xmlns:mos="http://openfmb.org/2016/10/openfmb/motoroperatedswitchmodule" xmlns:c="http://openfmb.org/2016/10/openfmb/commonmodule" elementFormDefault="qualified" version="1.0">
+	<xs:import namespace="http://openfmb.org/2016/10/openfmb/commonmodule" schemaLocation="CommonModule.xsd"/>
+	<xs:element name="MotorOperatedSwitchEventProfile" type="MotorOperatedSwitchEventProfile"/>
+	<xs:complexType name="MotorOperatedSwitchEventProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="motorOperatedSwitch" type="c:MotorOperatedSwitch" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="motorOperatedSwitchEvent" type="c:MotorOperatedSwitchEvent" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="MotorOperatedSwitchStatusProfile" type="MotorOperatedSwitchStatusProfile"/>
+	<xs:complexType name="MotorOperatedSwitchStatusProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="motorOperatedSwitch" type="c:MotorOperatedSwitch" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="motorOperatedSwitchStatus" type="c:MotorOperatedSwitchStatus" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="MotorOperatedSwitchReadingProfile" type="MotorOperatedSwitchReadingProfile"/>
+	<xs:complexType name="MotorOperatedSwitchReadingProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="motorOperatedSwitch" type="c:MotorOperatedSwitch" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="motorOperatedSwitchReadingList" type="c:MotorOperatedSwitchReadingList" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="MotorOperatedSwitchControlScheduleProfile" type="MotorOperatedSwitchControlScheduleProfile"/>
+	<xs:complexType name="MotorOperatedSwitchControlScheduleProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="motorOperatedSwitch" type="c:MotorOperatedSwitch" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="motorOperatedSwitchControlScheduleList" type="c:MotorOperatedSwitchControlScheduleList" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="MotorOperatedSwitchControlProfile" type="MotorOperatedSwitchControlProfile"/>
+	<xs:complexType name="MotorOperatedSwitchControlProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="motorOperatedSwitch" type="c:MotorOperatedSwitch" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="motorOperatedSwitchControl" type="c:MotorOperatedSwitchControl" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

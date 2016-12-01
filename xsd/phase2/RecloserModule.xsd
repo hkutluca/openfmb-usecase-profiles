@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://openfmb.org/2016/10/openfmb/reclosermodule" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://openfmb.org/2016/10/openfmb/reclosermodule" xmlns:rcls="http://openfmb.org/2016/10/openfmb/reclosermodule" xmlns:c="http://openfmb.org/2016/10/openfmb/commonmodule" elementFormDefault="qualified" version="1.0">
+	<xs:import namespace="http://openfmb.org/2016/10/openfmb/commonmodule" schemaLocation="CommonModule.xsd"/>
+	<xs:element name="RecloserReadingProfile" type="RecloserReadingProfile"/>
+	<xs:complexType name="RecloserReadingProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="recloser" type="c:Recloser" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="recloserReadingList" type="c:RecloserReadingList" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="RecloserEventProfile" type="RecloserEventProfile"/>
+	<xs:complexType name="RecloserEventProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="recloser" type="c:Recloser" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="recloserEvent" type="c:RecloserEvent" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="RecloserControlProfile" type="RecloserControlProfile"/>
+	<xs:complexType name="RecloserControlProfile">
+		<xs:annotation>
+			<xs:documentation>Instructs an end device (or an end device group) to perform a specified action.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="recloser" type="c:Recloser" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="recloserControl" type="c:RecloserControl" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="RecloserStatusProfile" type="RecloserStatusProfile"/>
+	<xs:complexType name="RecloserStatusProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="recloser" type="c:Recloser" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="recloserStatus" type="c:RecloserStatus" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

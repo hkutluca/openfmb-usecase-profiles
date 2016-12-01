@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://openfmb.org/2016/10/openfmb/loadmodule" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://openfmb.org/2016/10/openfmb/loadmodule" xmlns:load="http://openfmb.org/2016/10/openfmb/loadmodule" xmlns:c="http://openfmb.org/2016/10/openfmb/commonmodule" elementFormDefault="qualified" version="1.0">
+	<xs:import namespace="http://openfmb.org/2016/10/openfmb/commonmodule" schemaLocation="CommonModule.xsd"/>
+	<xs:element name="LoadReadingProfile" type="LoadReadingProfile"/>
+	<xs:complexType name="LoadReadingProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="energyConsumer" type="c:EnergyConsumer" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="loadReadingList" type="c:LoadReadingList" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="LoadControlProfile" type="LoadControlProfile"/>
+	<xs:complexType name="LoadControlProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="energyConsumer" type="c:EnergyConsumer" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="loadControl" type="c:LoadControl" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="LoadStatusProfile" type="LoadStatusProfile"/>
+	<xs:complexType name="LoadStatusProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="energyConsumer" type="c:EnergyConsumer" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="loadStatus" type="c:LoadStatus" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="LoadForecastProfile" type="LoadForecastProfile"/>
+	<xs:complexType name="LoadForecastProfile">
+		<xs:annotation>
+			<xs:documentation>Load forecast.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="energyConsumer" type="c:EnergyConsumer" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="forecastSchedule" type="c:ForecastSchedule" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="LoadControlScheduleProfile" type="LoadControlScheduleProfile"/>
+	<xs:complexType name="LoadControlScheduleProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="energyConsumer" type="c:EnergyConsumer" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="loadControlScheduleList" type="c:LoadControlScheduleList" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

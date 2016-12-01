@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://openfmb.org/2016/10/openfmb/shuntmodule" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://openfmb.org/2016/10/openfmb/shuntmodule" xmlns:shnt="http://openfmb.org/2016/10/openfmb/shuntmodule" xmlns:c="http://openfmb.org/2016/10/openfmb/commonmodule" elementFormDefault="qualified" version="1.0">
+	<xs:import namespace="http://openfmb.org/2016/10/openfmb/commonmodule" schemaLocation="CommonModule.xsd"/>
+	<xs:element name="ShuntStatusProfile" type="ShuntStatusProfile"/>
+	<xs:complexType name="ShuntStatusProfile">
+		<xs:annotation>
+			<xs:documentation>Resource status module</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="shuntStatus" type="c:ShuntStatus" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="shuntSystem" type="c:ShuntSystem" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ShuntControlProfile" type="ShuntControlProfile"/>
+	<xs:complexType name="ShuntControlProfile">
+		<xs:annotation>
+			<xs:documentation>Instructs an end device (or an end device group) to perform a specified action.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="shuntControl" type="c:ShuntControl" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="shuntSystem" type="c:ShuntSystem" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ShuntReadingProfile" type="ShuntReadingProfile"/>
+	<xs:complexType name="ShuntReadingProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="shuntReadingList" type="c:ShuntReadingList" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="shuntSystem" type="c:ShuntSystem" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ShuntControlScheduleProfile" type="ShuntControlScheduleProfile"/>
+	<xs:complexType name="ShuntControlScheduleProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="shuntControlScheduleList" type="c:ShuntControlScheduleList" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="shuntSystem" type="c:ShuntSystem" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

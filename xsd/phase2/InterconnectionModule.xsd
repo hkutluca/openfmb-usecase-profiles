@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://openfmb.org/2016/10/openfmb/interconnectionmodule" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:intc="http://openfmb.org/2016/10/openfmb/interconnectionmodule" xmlns:c="http://openfmb.org/2016/10/openfmb/commonmodule" elementFormDefault="qualified" version="1.0">
+	<xs:import namespace="http://openfmb.org/2016/10/openfmb/commonmodule" schemaLocation="CommonModule.xsd"/>
+	<xs:element name="RequestedInterconnectionScheduleProfile" type="intc:RequestedInterconnectionScheduleProfile"/>
+	<xs:complexType name="RequestedInterconnectionScheduleProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="interconnectionPoint" type="c:InterconnectionPoint" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="interconnectionScheduleList" type="c:InterconnectionScheduleList" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="PlannedInterconnectionScheduleProfile" type="intc:PlannedInterconnectionScheduleProfile"/>
+	<xs:complexType name="PlannedInterconnectionScheduleProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="interconnectionPoint" type="c:InterconnectionPoint" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="interconnectionScheduleList" type="c:InterconnectionScheduleList" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

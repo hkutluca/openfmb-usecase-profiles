@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://openfmb.org/2016/10/openfmb/essmodule" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://openfmb.org/2016/10/openfmb/essmodule" xmlns:ess="http://openfmb.org/2016/10/openfmb/essmodule" xmlns:c="http://openfmb.org/2016/10/openfmb/commonmodule" elementFormDefault="qualified" version="1.0">
+	<xs:import namespace="http://openfmb.org/2016/10/openfmb/commonmodule" schemaLocation="CommonModule.xsd"/>
+	<xs:element name="ESSControlProfile" type="ESSControlProfile"/>
+	<xs:complexType name="ESSControlProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="ess" type="c:ESS" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="essControl" type="c:ESSControl" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ESSReadingProfile" type="ESSReadingProfile"/>
+	<xs:complexType name="ESSReadingProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="ess" type="c:ESS" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="essReadingList" type="c:ESSReadingList" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ESSControlScheduleProfile" type="ESSControlScheduleProfile"/>
+	<xs:complexType name="ESSControlScheduleProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="ess" type="c:ESS" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="essControlScheduleList" type="c:ESSControlScheduleList" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ESSEventProfile" type="ESSEventProfile"/>
+	<xs:complexType name="ESSEventProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="ess" type="c:ESS" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="essEvent" type="c:ESSEvent" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ESSStatusProfile" type="ESSStatusProfile"/>
+	<xs:complexType name="ESSStatusProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="ess" type="c:ESS" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="essStatus" type="c:ESSStatus" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

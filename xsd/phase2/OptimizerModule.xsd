@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://openfmb.org/2016/10/openfmb/optimizermodule" xmlns:opt="http://openfmb.org/2016/10/openfmb/optimizermodule" xmlns:c="http://openfmb.org/2016/10/openfmb/commonmodule" xmlns:intc="http://openfmb.org/2016/10/openfmb/interconnectionmodule" xmlns:ess="http://openfmb.org/2016/10/openfmb/essmodule" xmlns:load="http://openfmb.org/2016/10/openfmb/loadmodule" xmlns:reg="http://openfmb.org/2016/10/openfmb/regulatormodule" xmlns:solr="http://openfmb.org/2016/10/openfmb/solarmodule" targetNamespace="http://openfmb.org/2016/10/openfmb/optimizermodule" elementFormDefault="qualified" version="1.0">
+	<xs:import namespace="http://openfmb.org/2016/10/openfmb/solarmodule" schemaLocation="SolarModule.xsd"/>
+	<xs:import namespace="http://openfmb.org/2016/10/openfmb/regulatormodule" schemaLocation="RegulatorModule.xsd"/>
+	<xs:import namespace="http://openfmb.org/2016/10/openfmb/loadmodule" schemaLocation="LoadModule.xsd"/>
+	<xs:import namespace="http://openfmb.org/2016/10/openfmb/essmodule" schemaLocation="ESSModule.xsd"/>
+	<xs:import namespace="http://openfmb.org/2016/10/openfmb/interconnectionmodule" schemaLocation="InterconnectionModule.xsd"/>
+	<xs:import namespace="http://openfmb.org/2016/10/openfmb/commonmodule" schemaLocation="CommonModule.xsd"/>
+	<xs:complexType name="RequestedInterconnectionScheduleProfileList">
+		<xs:sequence>
+			<xs:element name="requestedInterconnectionScheduleProfile" type="intc:RequestedInterconnectionScheduleProfile" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="RequestedOptimizerScheduleProfile" type="RequestedOptimizerScheduleProfile"/>
+	<xs:complexType name="RequestedOptimizerScheduleProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="essControlScheduleProfileList" type="ESSControlScheduleProfileList" minOccurs="0"/>
+					<xs:element name="loadControlScheduleProfileList" type="LoadControlScheduleProfileList" minOccurs="0"/>
+					<xs:element name="regulatorControlScheduleProfileList" type="RegulatorControlScheduleProfileList" minOccurs="0"/>
+					<xs:element name="requestedInterconnectionScheduleProfileList" type="RequestedInterconnectionScheduleProfileList" minOccurs="0"/>
+					<xs:element name="solarControlScheduleProfileList" type="SolarControlScheduleProfileList" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="PlannedOptimizerScheduleProfile" type="PlannedOptimizerScheduleProfile"/>
+	<xs:complexType name="PlannedOptimizerScheduleProfile">
+		<xs:complexContent>
+			<xs:extension base="c:Container">
+				<xs:sequence>
+					<xs:element name="essControlScheduleProfileList" type="ESSControlScheduleProfileList" minOccurs="0"/>
+					<xs:element name="loadControlScheduleProfileList" type="LoadControlScheduleProfileList" minOccurs="0"/>
+					<xs:element name="plannedInterconnectionScheduleProfileList" type="PlannedInterconnectionScheduleProfileList" minOccurs="0"/>
+					<xs:element name="regulatorControlScheduleProfileList" type="RegulatorControlScheduleProfileList" minOccurs="0"/>
+					<xs:element name="solarControlScheduleProfileList" type="SolarControlScheduleProfileList" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PlannedInterconnectionScheduleProfileList">
+		<xs:sequence>
+			<xs:element name="plannedInterconnectionScheduleProfile" type="intc:PlannedInterconnectionScheduleProfile" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ESSControlScheduleProfileList">
+		<xs:sequence>
+			<xs:element name="essControlScheduleProfile" type="ess:ESSControlScheduleProfile" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SolarControlScheduleProfileList">
+		<xs:sequence>
+			<xs:element name="solarControlScheduleProfile" type="solr:SolarControlScheduleProfile" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="LoadControlScheduleProfileList">
+		<xs:sequence>
+			<xs:element name="loadControlScheduleProfile" type="load:LoadControlScheduleProfile" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RegulatorControlScheduleProfileList">
+		<xs:sequence>
+			<xs:element name="regulatorControlScheduleProfile" type="reg:RegulatorControlScheduleProfile" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
