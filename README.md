@@ -21,5 +21,6 @@ Release package will contain the following
 * XSD files 
 * IDL files
 
-The Phase 1 package (Dec 15, 2015) is located [here](https://github.com/openfmb/openfmb-usecase-profiles/releases).
+The Phase 1 package (Dec 15, 2015) is located [here](https://github.com/openfmb/openfmb-usecase-profiles/releases/tag/v1.0.0).
 
+The Phase 2 package (Nov 28, 2016) is located [here](https://github.com/openfmb/openfmb-usecase-profiles/releases/tag/2.0.0).
